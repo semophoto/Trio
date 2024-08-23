@@ -44,7 +44,7 @@ struct BolusView: View {
                     Button {
                         WKInterfaceDevice.current().play(.click)
                         let newValue = steps + 1
-                        steps = min(newValue, Double((state.maxBolus ?? 5) / (state.bolusIncrement ?? 0.1)))
+                        steps = min(newValue, Double((state.maxBolus ?? 5) / (state.bolusIncrement ?? 0.5)))
                     } label: { Image(systemName: "plus") }
                         .frame(width: geo.size.width / 4)
                 }
