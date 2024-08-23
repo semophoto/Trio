@@ -75,7 +75,7 @@ struct BolusConfirmationView: View {
             $crownProgress,
             from: 0.0,
             through: 100.0,
-            by: state.confirmBolusFaster ? 5 : 2.5,
+            by: state.confirmBolusFaster ? 5 : 3,
             sensitivity: .high,
             isContinuous: false,
             isHapticFeedbackEnabled: true
