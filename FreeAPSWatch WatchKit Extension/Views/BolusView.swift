@@ -10,7 +10,7 @@ struct BolusView: View {
         formatter.numberStyle = .decimal
         formatter.minimum = 0
         formatter.maximum = Double((state.maxBolus ?? 5) / (state.bolusIncrement ?? 0.1)) as NSNumber
-        formatter.maximumFractionDigits = (state.bolusIncrement ?? 0.1) > 0.05 ? 1 : 2
+        formatter.maximumFractionDigits = (state.bolusIncrement ?? 0.1) > 0.50 ? 1 : 2
         formatter.minimumFractionDigits = (state.bolusIncrement ?? 0.1) > 0.05 ? 1 : 2
         formatter.allowsFloats = true
         formatter.roundingIncrement = Double(state.bolusIncrement ?? 0.1) as NSNumber
@@ -44,7 +44,7 @@ struct BolusView: View {
                     Button {
                         WKInterfaceDevice.current().play(.click)
                         let newValue = steps + 1
-                        steps = min(newValue, Double((state.maxBolus ?? 5) / (state.bolusIncrement ?? 0.5)))
+                        steps = min(newValue, Double((state.maxBolus ?? 5) / (state.bolusIncrement ?? 0.50)))
                     } label: { Image(systemName: "plus") }
                         .frame(width: geo.size.width / 4)
                 }
