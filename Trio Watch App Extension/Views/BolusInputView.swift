@@ -77,7 +77,7 @@ struct BolusInputView: View {
                                 from: 0,
                                 through: effectiveBolusLimit,
                                 by: Double(truncating: state.bolusIncrement as NSNumber),
-                                sensitivity: .medium,
+                                sensitivity: .low,
                                 isContinuous: false,
                                 isHapticFeedbackEnabled: true
                             )
