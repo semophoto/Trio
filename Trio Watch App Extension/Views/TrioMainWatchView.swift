@@ -145,7 +145,9 @@ struct TrioMainWatchView: View {
                     .disabled(isWatchStateDated || isSessionUnreachable)
 
                     Button {
-                        showingTreatmentMenuSheet = true
+                        // Directly navigate to bolus input (reset carbs like direct bolus flow)
+                        state.carbsAmount = 0
+                        navigationPath.append(NavigationDestinations.bolusInput)
                     } label: {
                         Image(systemName: "plus")
                             .foregroundStyle(Color.bgDarkerDarkBlue)
